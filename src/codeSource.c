@@ -1,16 +1,5 @@
 #include "myHeader.h"
 
-/*
-    //cadre trait simple
-        printf("\n \xda\xc4\xbf");
-        printf("\n \xb3 \xb3");
-        printf("\n \xc0\xc4\xd9");
-    cadre trait double
-        printf("\n \xc9\xcd\xbb");
-        printf("\n \xba \xba");
-        printf("\n \xc8\xcd\xbc");
-*/
-
         //Declaration des menus essentielles du projet
 int menuPrincipal(void){
     int choix;
