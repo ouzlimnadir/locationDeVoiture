@@ -37,6 +37,7 @@ int menuPrincipal(void){
     printf("\n\n\t\t\t\t Votre choix  :  ");
 
     scanf("%d",&choix);
+    fflush(stdin);
 
     return choix;
 }
@@ -67,7 +68,7 @@ int gestionDesVoitures(void){
     printf("\n\n\t\t\t\t Votre choix  :  ");
 
     scanf("%d",&choix);
-
+    fflush(stdin);
     return choix;
 }
 int locationVoiture(void){
@@ -99,7 +100,7 @@ int locationVoiture(void){
     printf("\n\n\t\t\t\t Votre choix  :  ");
 
     scanf("%d",&choix);
-
+    fflush(stdin);
     return choix;
 }
 int gestionDesClients(void){
@@ -129,7 +130,7 @@ int gestionDesClients(void){
     printf("\n\n\t\t\t\t Votre choix  :  ");
 
     scanf("%d",&choix);
-
+    fflush(stdin);
     return choix;
 }
         //fonction annexes
@@ -139,6 +140,7 @@ int retour (void){
     printf("\n\n\t\t\t\t     0:Menu principal                       1: Menu precedent");
     printf("\n\n\t\t\t\t Votre choix  :  ");
     scanf("%d",&n);
+    fflush(stdin);
     return n;
 }
 int quitter(){
@@ -152,6 +154,7 @@ int quitter(){
     printf("\n\t\t\t        \xc0\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xd9");
     printf("\n\n\t\t\t\t Votre choix :  ");
     scanf("%d",&q);
+    fflush(stdin);
     return q;
 }
 void invalidOption(){
@@ -162,6 +165,7 @@ void invalidOption(){
     printf("\n\t\t\t        \xb3                              \xb3");
     printf("\n\t\t\t        \xc0\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xd9\n");
     Sleep(1000);
+    fflush(stdin);
 }
 int validDate(date d){
     //check year
@@ -263,8 +267,8 @@ void ajouterVoiture(){
             fprintf(car,"%d ; %s ; %s ; %s ; %d ; %d ; %s\n",v.idVoiture,v.marque,v.nomVoiture,v.couleur,v.nbPlaces,v.prixJour,v.enLocation);
         } else
             errorFile(265);
-        fclose(car);
     }
+    fclose(car);
 }
 void modifierVoiture(){
     FILE *fc=NULL,*tmp=NULL;
@@ -716,6 +720,7 @@ int louerVoiture(){
                 printf("\n\n\t\t\t\xaf Voulez vous retaper un autre ID ? ");
                 printf("\n\n\t\t\t      0: NON            1: OUI      ");
                 printf("\n\n\t\t\t\t Votre choix  :  ");
+                fflush(stdin);
                 scanf("%d",&C);
                 if(C)
                     goto vID;
@@ -728,6 +733,7 @@ int louerVoiture(){
         printf("\n\n\t\t\t      0: NON                 1: OUI");
         printf("\n\n\t\t\t\t Votre choix  :  ");
         scanf("%d",&C);
+        fflush(stdin);
         if(C){
             ajouterClient();
             goto start;
@@ -743,6 +749,7 @@ int louerVoiture(){
         printf("\n\n\t\t\t      0: NON             1: OUI      ");
         printf("\n\n\t\t\t\t Votre choix  :  ");
         scanf("%d", &choix);
+        fflush(stdin);
         if (choix) goto taperID;
     }
     return 0;
@@ -758,6 +765,7 @@ int afficherContrat(){
     start :
     printf("\n\n\t\t\t\xaf Saisissez le numero de contrat a visualiser : ");
     scanf("%f",&id);
+    fflush(stdin);
 
     //extraire le contrat
     liste=fopen("listeContrats.txt","r");
